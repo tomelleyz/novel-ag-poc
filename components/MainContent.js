@@ -4,8 +4,8 @@ import NavigationPanelMobile from "./navigation/NavigationPanelMobile";
 
 export default function MainContent({ children }) {
   return (
-    <section className="relative flex h-full w-full flex-col overflow-x-hidden bg-grey-75">
-      <header className="sticky top-0 z-20 flex items-center justify-between border-b border-solid border-grey-50 bg-grey-75 px-4 py-[18px] lg:py-[22px] lg:pl-[38px] lg:pr-6">
+    <section className="bg-grey-75 lg:pl-[230px]">
+      <header className="fixed left-0 right-0 top-0 z-20 flex items-center justify-between border-b border-solid border-grey-50 bg-grey-75 px-4 py-[18px] lg:left-[230px] lg:py-[22px] lg:pl-[38px] lg:pr-6">
         <Link href="/" className="block lg:hidden">
           <Image
             src="/novel-ag-logo.svg"
@@ -64,7 +64,7 @@ export default function MainContent({ children }) {
         <NavigationPanelMobile />
       </header>
 
-      <div className="h-full overflow-y-auto overflow-x-hidden px-4 pb-8 pt-14 lg:pl-8 lg:pr-[30px]">
+      <div className="mt-[72px] overflow-x-hidden px-4 pb-8 pt-14 lg:mt-[81px] lg:pl-8 lg:pr-[30px]">
         {children}
       </div>
     </section>
