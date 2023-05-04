@@ -56,11 +56,9 @@
   }
 
   /* Style cmdk */
-
   [cmdk-overlay] {
     @apply fixed inset-0 bg-black/20 backdrop-blur-sm data-[state=open]:animate-overlayShow;
   }
-  /* max-h-[85vh]  */
   [cmdk-dialog] {
     @apply fixed left-[50%] top-[10%] w-[90vw] max-w-[600px] translate-x-[-50%] overflow-hidden rounded-xl bg-white shadow-lg focus:outline-none data-[state=open]:animate-contentShow;
   }
