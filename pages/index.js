@@ -289,10 +289,14 @@ export default function Home() {
                           {farm.status === "active" ? "Active" : "Inactive"}
                         </span>
                       </td>
-                      <td className="truncate border-t border-solid border-grey-150 bg-white px-4 py-5 transition duration-300 hover:bg-[#F7F7F7] lg:px-6">
+                      <td className="truncate border-t border-solid border-grey-150 bg-white px-4 py-5 lg:px-6">
                         <div className="flex gap-6">
-                          <button>Edit</button>
-                          <button>View</button>
+                          <button className="transition-colors duration-300 hover:text-green-400">
+                            Edit
+                          </button>
+                          <button className="transition-colors duration-300 hover:text-green-400">
+                            View
+                          </button>
                         </div>
                       </td>
                     </tr>
