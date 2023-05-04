@@ -64,6 +64,14 @@ module.exports = {
           from: { opacity: 0, transform: "translateX(-2px)" },
           to: { opacity: 1, transform: "translateX(0)" },
         },
+        overlayShow: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        contentShow: {
+          from: { opacity: 0, transform: "translate(-50%, -2px) scale(0.96)" },
+          to: { opacity: 1, transform: "translate(-50%, 0) scale(1)" },
+        },
       },
       animation: {
         slideDownAndFade:
@@ -73,6 +81,8 @@ module.exports = {
         slideUpAndFade: "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightAndFade:
           "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

@@ -2,6 +2,8 @@ import InfoCard from "@/components/InfoCard";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import SearchCommandMenu from "@/components/SearchCommandMenu";
+import { useState } from "react";
 
 const dummyData = [
   {
@@ -71,13 +73,15 @@ const dummyData = [
 ];
 
 export default function Home() {
+  const [openSearchCommandMenu, setOpenSearchCommandMenu] = useState(false);
+
   return (
     <>
       <Head>
         <title>Novel AG | Dashboard</title>
         <meta name="description" content="Novel AG dashboard" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#16B364"></meta>
+        <meta name="theme-color" content="#16B364" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" />
         <link
@@ -100,10 +104,18 @@ export default function Home() {
       </Head>
 
       <main>
-        <Layout>
+        <SearchCommandMenu
+          openSearchCommandMenu={openSearchCommandMenu}
+          setOpenSearchCommandMenu={setOpenSearchCommandMenu}
+        />
+
+        <Layout setOpenSearchCommandMenu={setOpenSearchCommandMenu}>
           <h1 className="mb-8 block text-2xl lg:hidden">Dashboard</h1>
           <div className="mb-6 flex items-center justify-between lg:hidden">
-            <button className="flex w-[50%] items-center rounded-[10px] border border-solid border-grey-25 bg-white py-1.5 pl-2 pr-3.5 shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05),_inset_0px_-1.2px_0px_rgba(57,_73,_171,_0.13)]">
+            <button
+              onClick={() => setOpenSearchCommandMenu(true)}
+              className="flex w-[50%] items-center rounded-[10px] border border-solid border-grey-25 bg-white py-1.5 pl-2 pr-3.5 shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05),_inset_0px_-1.2px_0px_rgba(57,_73,_171,_0.13)] transition duration-300 hover:bg-grey-25"
+            >
               <svg
                 width="18"
                 height="18"
@@ -124,6 +136,7 @@ export default function Home() {
                 Search
               </span>
             </button>
+
             <button className="inline-flex shrink-0 items-center gap-x-2 rounded-lg bg-green-400 px-3.5 py-2 font-inter text-sm font-semibold text-white shadow-[inset_0px_-2px_0px_#139A56]">
               <span>Add Farm</span>
 
@@ -217,7 +230,7 @@ export default function Home() {
                             </Tooltip.Trigger>
                             <Tooltip.Portal>
                               <Tooltip.Content
-                                className="z-10 w-[150px] select-none rounded-lg bg-black px-3 py-2 text-xs/tight text-white will-change-[transform,opacity] data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade md:w-[190px]"
+                                className="w-[150px] select-none rounded-lg bg-black px-3 py-2 text-xs/tight text-white will-change-[transform,opacity] data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade md:w-[190px]"
                                 sideOffset={8}
                                 style={{
                                   filter:

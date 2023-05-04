@@ -1,11 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import NavigationPanelMobile from "./navigation/NavigationPanelMobile";
+import { useEffect, useRef } from "react";
 
-export default function MainContent({ children }) {
+export default function MainContent({ setOpenSearchCommandMenu, children }) {
+  const searchShortcutRef = useRef(null);
+
+  useEffect(() => {
+    if (
+      navigator.platform.indexOf("Mac") === 0 ||
+      navigator.platform === "iPhone" ||
+      navigator.platform === "iPad"
+    ) {
+      searchShortcutRef.current.innerHTML = "&#8984;S";
+    }
+  }, []);
+
   return (
     <section className="bg-grey-75 lg:pl-[230px]">
-      <header className="fixed left-0 right-0 top-0 z-20 flex items-center justify-between border-b border-solid border-grey-50 bg-grey-75 px-4 py-[18px] lg:left-[230px] lg:py-[22px] lg:pl-[38px] lg:pr-6">
+      <header className="fixed left-0 right-0 top-0 flex items-center justify-between border-b border-solid border-grey-50 bg-grey-75 px-4 py-[18px] lg:left-[230px] lg:py-[22px] lg:pl-[38px] lg:pr-6">
         <Link href="/" className="block lg:hidden">
           <Image
             src="/novel-ag-logo.svg"
@@ -17,7 +30,11 @@ export default function MainContent({ children }) {
 
         <div className="hidden gap-x-[55px] lg:flex">
           <h1 className="text-2xl">Dashboard</h1>
-          <button className="flex w-[35vw] items-center rounded-[10px] border border-solid border-grey-25 bg-white py-1.5 pl-2 pr-3.5 shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05),_inset_0px_-1.2px_0px_rgba(57,_73,_171,_0.13)]">
+
+          <button
+            onClick={() => setOpenSearchCommandMenu(true)}
+            className="flex w-[35vw] items-center rounded-[10px] border border-solid border-grey-25 bg-white py-1.5 pl-2 pr-3.5 shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05),_inset_0px_-1.2px_0px_rgba(57,_73,_171,_0.13)] transition duration-300 hover:bg-grey-25"
+          >
             <svg
               width="18"
               height="18"
@@ -37,8 +54,11 @@ export default function MainContent({ children }) {
             <span className="ml-2 mr-auto font-outfit text-xs font-normal">
               Search
             </span>
-            <span className="flex h-[18px] w-5 items-center justify-center font-inter text-xs/[18px] font-normal tracking-normal text-grey-300">
-              &#8984;S
+            <span
+              ref={searchShortcutRef}
+              className="flex h-[18px] w-5 items-center justify-center font-inter text-xs/[18px] font-normal tracking-normal text-grey-300"
+            >
+              Ctrl+S
             </span>
           </button>
         </div>
