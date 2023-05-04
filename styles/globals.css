@@ -57,10 +57,10 @@
 
   /* Style cmdk */
   [cmdk-overlay] {
-    @apply fixed inset-0 bg-black/20 backdrop-blur-sm data-[state=open]:animate-overlayShow;
+    @apply fixed inset-0 z-20 bg-black/20 backdrop-blur-sm data-[state=open]:animate-overlayShow;
   }
   [cmdk-dialog] {
-    @apply fixed left-[50%] top-[10%] w-[90vw] max-w-[600px] translate-x-[-50%] overflow-hidden rounded-xl bg-white shadow-lg focus:outline-none data-[state=open]:animate-contentShow;
+    @apply fixed left-[50%] top-[10%] z-20 w-[90vw] max-w-[600px] translate-x-[-50%] overflow-hidden rounded-xl bg-white shadow-lg focus:outline-none data-[state=open]:animate-contentShow;
   }
   [cmdk-list] {
     @apply h-[var(--cmdk-list-height)] max-h-[500px] min-h-[300px] overflow-auto overscroll-contain transition-[height] duration-100 ease-[ease];

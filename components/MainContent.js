@@ -18,7 +18,7 @@ export default function MainContent({ setOpenSearchCommandMenu, children }) {
 
   return (
     <section className="bg-grey-75 lg:pl-[230px]">
-      <header className="fixed left-0 right-0 top-0 flex items-center justify-between border-b border-solid border-grey-50 bg-grey-75 px-4 py-[18px] lg:left-[230px] lg:py-[22px] lg:pl-[38px] lg:pr-6">
+      <header className="fixed left-0 right-0 top-0 z-10 flex items-center justify-between border-b border-solid border-grey-50 bg-grey-75 px-4 py-[18px] lg:left-[230px] lg:py-[22px] lg:pl-[38px] lg:pr-6">
         <Link href="/" className="block lg:hidden">
           <Image
             src="/novel-ag-logo.svg"
@@ -84,7 +84,7 @@ export default function MainContent({ setOpenSearchCommandMenu, children }) {
         <NavigationPanelMobile />
       </header>
 
-      <div className="mt-[72px] overflow-x-hidden px-4 pb-8 pt-14 lg:mt-[81px] lg:pl-8 lg:pr-[30px]">
+      <div className="mt-[72px] px-4 pb-8 pt-14 lg:mt-[81px] lg:pl-8 lg:pr-[30px]">
         {children}
       </div>
     </section>

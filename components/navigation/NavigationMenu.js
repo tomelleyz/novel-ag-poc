@@ -14,7 +14,7 @@ export default function NavigationMenu() {
         />
       </Link>
 
-      <nav className="mb-auto overflow-y-auto px-[17px] py-[18px]">
+      <nav className="mb-auto overflow-auto overscroll-contain px-[17px] py-[18px]">
         <div className="drop-shadow-[0px_0.639628px_1.27926px_rgba(16,_24,_40,_0.08)]">
           <PrimaryMenuLink href="/">
             <svg

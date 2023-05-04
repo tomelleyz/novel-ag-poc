@@ -26,7 +26,7 @@ export default function NavigationPanelMobile() {
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 top-[72px] overflow-y-auto bg-white">
+        <Dialog.Overlay className="fixed inset-0 top-[72px] overflow-auto overscroll-contain bg-white">
           <Dialog.Content className="data-[state=closed]:animate-fadeOut data-[state=open]:animate-fadeIn w-full bg-white px-4 pb-16 lg:px-8">
             <Dialog.Title className="sr-only">Menu</Dialog.Title>
             <Dialog.Description className="sr-only">
