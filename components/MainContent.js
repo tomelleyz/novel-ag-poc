@@ -13,6 +13,8 @@ export default function MainContent({ setOpenSearchCommandMenu, children }) {
       navigator.platform === "iPad"
     ) {
       searchShortcutRef.current.innerHTML = "&#8984;S";
+    } else {
+      searchShortcutRef.current.innerHTML = "Ctrl+S";
     }
   }, []);
 
@@ -57,9 +59,7 @@ export default function MainContent({ setOpenSearchCommandMenu, children }) {
             <span
               ref={searchShortcutRef}
               className="flex h-[18px] w-5 items-center justify-center font-inter text-xs/[18px] font-normal tracking-normal text-grey-300"
-            >
-              Ctrl+S
-            </span>
+            ></span>
           </button>
         </div>
 
